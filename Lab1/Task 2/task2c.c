@@ -35,7 +35,7 @@ int passcheck(char *pass)
     if (valid!=1){
         printf(",");
     }
-    printf("“Digit character missing”");
+    printf("“Digit missing”");
     valid=0;
   }
   if (!special){
@@ -44,9 +44,6 @@ int passcheck(char *pass)
     }
     printf("“Special character missing”");
     valid=0;
-  }
-  if (valid==1){
-    printf("“Password is valid”");
   }
   if (valid==1){
     printf("OK");
