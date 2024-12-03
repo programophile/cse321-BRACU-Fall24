@@ -1,0 +1,4 @@
+cse321-Operating Systems- 06
+cse421- Computer Networks - 02
+cse440- Natural Language processing 2 - 01
+cse470- Software Engineering- 06
