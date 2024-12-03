@@ -9,34 +9,26 @@ int main() {
         printf("Error: Could not open input file.\n");
         return 1;
     }
-
-    // Open the output file for writing
     FILE *outputFile = fopen("output.txt", "w");
     if (outputFile == NULL) {
         printf("Error: Could not open output file.\n");
-        fclose(inputFile); // Close input file before exiting
+        fclose(inputFile); 
         return 1;
     }
 
     // Read input from the file
     while (fgets(str, sizeof(str), inputFile) != NULL) {
-        // Remove the newline character, if any
-        str[strlen(str) - 1] = '\0';
-
-        // Tokenize the string
         token = strtok(str, " ");
         while (token != NULL) {
-            // Write each token to the output file with a single space
             fprintf(outputFile, "%s ", token);
             token = strtok(NULL, " ");
+            if (token == NULL) break;
         }
-        fprintf(outputFile, "\n"); // Add a newline after processing each line
-    }
-
-    // Close the files
+        fprintf(outputFile, "\n");
     fclose(inputFile);
     fclose(outputFile);
 
     printf("Processing complete. Check 'output.txt' for results.\n");
     return 0;
+}
 }
